@@ -26,17 +26,88 @@ public class CarInFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblCarInFrameTitle = new javax.swing.JLabel();
+        lblInTimeTitle = new javax.swing.JLabel();
+        lblInTime = new javax.swing.JLabel();
+        lblInNumberTitle = new javax.swing.JLabel();
+        lblInNumber = new javax.swing.JLabel();
+        lblCaption = new javax.swing.JLabel();
+        btnConfirm = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblCarInFrameTitle.setFont(new java.awt.Font("나눔스퀘어", 0, 36)); // NOI18N
+        lblCarInFrameTitle.setText("입차 차량 확인");
+
+        lblInTimeTitle.setFont(new java.awt.Font("나눔스퀘어", 0, 24)); // NOI18N
+        lblInTimeTitle.setText("입차 시간 :");
+
+        lblInTime.setFont(new java.awt.Font("나눔스퀘어", 0, 24)); // NOI18N
+        lblInTime.setText("입차 시간 표시");
+
+        lblInNumberTitle.setFont(new java.awt.Font("나눔스퀘어", 0, 24)); // NOI18N
+        lblInNumberTitle.setText("차량 번호 :");
+
+        lblInNumber.setFont(new java.awt.Font("나눔스퀘어", 0, 24)); // NOI18N
+        lblInNumber.setText("차량 번호 표시");
+
+        lblCaption.setFont(new java.awt.Font("나눔스퀘어", 0, 18)); // NOI18N
+        lblCaption.setText("입차 처리하시겠습니까?");
+
+        btnConfirm.setFont(new java.awt.Font("나눔스퀘어", 0, 24)); // NOI18N
+        btnConfirm.setText("확인");
+
+        btnCancel.setFont(new java.awt.Font("나눔스퀘어", 0, 24)); // NOI18N
+        btnCancel.setText("취소");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(lblCarInFrameTitle))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblCaption)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(lblInNumberTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblInTimeTitle))
+                                .addGap(30, 30, 30)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblInTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblInNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblCarInFrameTitle)
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblInTimeTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblInTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblInNumberTitle)
+                    .addComponent(lblInNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(lblCaption)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                    .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,5 +149,13 @@ public class CarInFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnConfirm;
+    private javax.swing.JLabel lblCaption;
+    private javax.swing.JLabel lblCarInFrameTitle;
+    private javax.swing.JLabel lblInNumber;
+    private javax.swing.JLabel lblInNumberTitle;
+    private javax.swing.JLabel lblInTime;
+    private javax.swing.JLabel lblInTimeTitle;
     // End of variables declaration//GEN-END:variables
 }
