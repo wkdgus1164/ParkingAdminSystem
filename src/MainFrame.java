@@ -107,7 +107,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInActionPerformed
 
     private void btnOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOutActionPerformed
-        // TODO add your handling code here:
+        new CarOutSearchFrame().setVisible(true);
     }//GEN-LAST:event_btnOutActionPerformed
 
     public static void main(String args[]) {
