@@ -1,18 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author wkdgu
- */
+import db.DatabaseManager;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 public class CarCreateFrame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CarCreateFrame
-     */
+    DatabaseManager DBM = new DatabaseManager();
+    String strSQL = "Select * From parkingAdminSystem";
+    
     public CarCreateFrame() {
         initComponents();
     }
@@ -26,21 +23,112 @@ public class CarCreateFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblCarCreateFrameTitle = new javax.swing.JLabel();
+        lblCarType = new javax.swing.JLabel();
+        lblCarNum = new javax.swing.JLabel();
+        txtCarType = new javax.swing.JTextField();
+        txtCarNum = new javax.swing.JTextField();
+        btnCreate = new javax.swing.JButton();
+        lblCaption = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblCarCreateFrameTitle.setFont(new java.awt.Font("굴림", 0, 36)); // NOI18N
+        lblCarCreateFrameTitle.setText("차량 등록");
+
+        lblCarType.setFont(new java.awt.Font("굴림", 0, 24)); // NOI18N
+        lblCarType.setText("차      종 : ");
+
+        lblCarNum.setFont(new java.awt.Font("굴림", 0, 24)); // NOI18N
+        lblCarNum.setText("차량번호 : ");
+
+        txtCarType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCarTypeActionPerformed(evt);
+            }
+        });
+
+        btnCreate.setFont(new java.awt.Font("굴림", 0, 24)); // NOI18N
+        btnCreate.setText("등록");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateActionPerformed(evt);
+            }
+        });
+
+        lblCaption.setFont(new java.awt.Font("굴림", 0, 18)); // NOI18N
+        lblCaption.setText("등록 처리하시겠습니까?");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCaption)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblCarType)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtCarType, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblCarNum)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtCarNum, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(lblCarCreateFrameTitle))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblCarCreateFrameTitle)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(lblCarType))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCarType, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblCarNum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtCarNum))
+                .addGap(33, 33, 33)
+                .addComponent(lblCaption)
+                .addGap(26, 26, 26)
+                .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtCarTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCarTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCarTypeActionPerformed
+
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        // TODO add your handling code here:   
+        strSQL = "Insert Into parkingAdminSystem Values (";
+        strSQL += "'" + txtCarType + "', ";
+        strSQL += "'" + txtCarNum.getText() + "')";
+        //try {
+        //    DBM.open();
+        //    DBM.DB_stmt.executeQuery(strSQL);
+        //    strSQL = "Select * From parkingAdminSystem";
+        //    DBM.close(Connection, DB_stmt, DB_rs);
+        //} catch (Exception e) {
+        //    System.out.println("SQLException : " + e.getMessage());
+        //}                                     
+    }//GEN-LAST:event_btnCreateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +166,12 @@ public class CarCreateFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCreate;
+    private javax.swing.JLabel lblCaption;
+    private javax.swing.JLabel lblCarCreateFrameTitle;
+    private javax.swing.JLabel lblCarNum;
+    private javax.swing.JLabel lblCarType;
+    private javax.swing.JTextField txtCarNum;
+    private javax.swing.JTextField txtCarType;
     // End of variables declaration//GEN-END:variables
 }
