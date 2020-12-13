@@ -5,11 +5,13 @@ import java.sql.*;
 public class DatabaseManager {
 
     String url = "localhost:3306";
-    String database = "jspDB";
+    String database = "parkingadminsystem";
     String id = "root";
     String pq = "root";
-    String sql = "select * from t_board";
+    String sql = "select * from t_car";
     Connection connection = null;
+    PreparedStatement preparedStatement = null;
+    ResultSet resultSet = null;
 
     private static DatabaseManager connector = null;
 
