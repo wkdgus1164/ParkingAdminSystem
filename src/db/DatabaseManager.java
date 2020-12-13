@@ -4,10 +4,11 @@ import java.sql.*;
 
 public class DatabaseManager {
 
-    String url = "localhost:3306";
+//    String url = "localhost:3306";
+    String url = "jdbc:oracle:thin:@localhost:1521";
     String database = "parkingadminsystem";
-    String id = "root";
-    String pq = "root";
+    String id = "ADMIN";
+    String pq = "alpha190315";
     String sql = "select * from t_car";
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -23,8 +24,8 @@ public class DatabaseManager {
     }
 
     public Connection open() throws Exception {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        connection = DriverManager.getConnection("jdbc:mysql://" + url + "/" + database + "?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&mysqlEncoding=utf8", id, pq);
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+        connection = DriverManager.getConnection(url, id, pq);
         return connection;
     }
 

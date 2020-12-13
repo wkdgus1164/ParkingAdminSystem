@@ -3,15 +3,19 @@ import db.DatabaseManager;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class CarCreateFrame extends javax.swing.JFrame {
 
-    DatabaseManager DBM = new DatabaseManager();
-    String strSQL = "Select * From parkingAdminSystem";
+    DatabaseManager DBM = DatabaseManager.getInstance();
+    Connection connection;
 
-    public CarCreateFrame() {
+    public CarCreateFrame() throws Exception {
+        this.connection = DBM.open();
         initComponents();
     }
 
@@ -140,10 +144,21 @@ public class CarCreateFrame extends javax.swing.JFrame {
             errorText += "를 확인해 주세요.";
             JOptionPane.showMessageDialog(null, errorText, "입력값 확인", JOptionPane.WARNING_MESSAGE);
         }
+        String strSQL = "insert into t_car (car_type, car_number, car_register_date, car_visit_count, car_point) values ('aaa', 'aaa', to_date('20190131','yyyy-mm-dd'), 0, 0)";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(strSQL);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("car_type"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CarCreateFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        
+
     }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
@@ -176,7 +191,11 @@ public class CarCreateFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CarCreateFrame().setVisible(true);
+                try {
+                    new CarCreateFrame().setVisible(true);
+                } catch (Exception ex) {
+                    Logger.getLogger(CarCreateFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
