@@ -19,6 +19,7 @@ public class DatabaseManager {
     public static DatabaseManager getInstance() {
         if (connector == null) {
             connector = new DatabaseManager();
+            
         }
         return connector;
     }
