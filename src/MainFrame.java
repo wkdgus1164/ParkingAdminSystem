@@ -40,9 +40,19 @@ public class MainFrame extends javax.swing.JFrame {
 
         btnIn.setFont(new java.awt.Font("나눔스퀘어", 0, 24)); // NOI18N
         btnIn.setText("차량 입차");
+        btnIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInActionPerformed(evt);
+            }
+        });
 
         btnOut.setFont(new java.awt.Font("나눔스퀘어", 0, 24)); // NOI18N
         btnOut.setText("차량 출차");
+        btnOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOutActionPerformed(evt);
+            }
+        });
 
         btnDashboard.setFont(new java.awt.Font("나눔스퀘어", 0, 14)); // NOI18N
         btnDashboard.setText("대시보드");
@@ -91,6 +101,14 @@ public class MainFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInActionPerformed
+        new CarListFrame().setVisible(true);
+    }//GEN-LAST:event_btnInActionPerformed
+
+    private void btnOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOutActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

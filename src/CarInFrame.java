@@ -35,7 +35,7 @@ public class CarInFrame extends javax.swing.JFrame {
         btnConfirm = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        //setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblCarInFrameTitle.setFont(new java.awt.Font("나눔스퀘어", 0, 36)); // NOI18N
         lblCarInFrameTitle.setText("입차 차량 확인");
