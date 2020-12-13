@@ -1,39 +1,8 @@
-import db.DatabaseManager;
 
 public class MainFrame extends javax.swing.JFrame {
 
-    DatabaseManager databaseManager = new DatabaseManager();
-    String strSQL = "SELECT * FROM t_car";
-    
     public MainFrame() {
         initComponents();
-        
-        try {
-            String strData = null;
-            databaseManager.open();
-            
-        } catch (Exception e) {
-        }
-    }
-    
-       public void getDBData(String strQuery) {
-        String strOutput = "제목\t성명\t월정액\t연락처\n";
-        jTextArea1.setText(strOutput);
-        try {
-            databaseManager.DB_rs = databaseManager.DB_stmt.executeQuery(strQuery);
-            while (databaseManager.DB_rs.next()) {
-                strOutput = "";
-                strOutput += databaseManager.DB_rs.getString("No") + "\t";
-                strOutput += databaseManager.DB_rs.getString("Name") + "\t";
-                strOutput += databaseManager.DB_rs.getString("Charge") + "\t";
-                strOutput += databaseManager.DB_rs.getString("Phone") + "\t";
-                strOutput += databaseManager.DB_rs.getString("Grade") + "\n";
-                jTextArea1.append(strOutput);
-            }
-            DBM.DB_rs.close();
-        } catch (Exception e) {
-            System.out.println("SQLException : " + e.getMessage());
-        }
     }
 
     @SuppressWarnings("unchecked")

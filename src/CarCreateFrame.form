@@ -27,11 +27,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="lblCaption" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="lblCarType" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="txtCarType" min="-2" pref="181" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -39,18 +39,19 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtCarNum" min="-2" pref="181" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btnCreate" min="-2" pref="141" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btnCancel" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
                       <Component id="lblCarCreateFrameTitle" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
-                      <Component id="btnCreate" min="-2" pref="147" max="-2" attributes="0"/>
-                  </Group>
               </Group>
-              <EmptySpace pref="66" max="32767" attributes="0"/>
+              <EmptySpace pref="52" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -60,25 +61,28 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblCarCreateFrameTitle" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Component id="lblCarType" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="txtCarType" min="-2" pref="29" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="lblCarNum" max="32767" attributes="0"/>
-                  <Component id="txtCarNum" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblCarNum" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCarNum" min="-2" pref="29" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="lblCaption" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-              <Component id="btnCreate" min="-2" pref="44" max="-2" attributes="0"/>
-              <EmptySpace pref="53" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="btnCreate" pref="44" max="32767" attributes="0"/>
+                  <Component id="btnCancel" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="35" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -87,7 +91,7 @@
     <Component class="javax.swing.JLabel" name="lblCarCreateFrameTitle">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="&#xad74;&#xb9bc;" size="36" style="0"/>
+          <Font name="NanumSquare" size="36" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#xcc28;&#xb7c9; &#xb4f1;&#xb85d;"/>
       </Properties>
@@ -95,7 +99,7 @@
     <Component class="javax.swing.JLabel" name="lblCarType">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="&#xad74;&#xb9bc;" size="24" style="0"/>
+          <Font name="NanumSquare" size="24" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#xcc28;      &#xc885; : "/>
       </Properties>
@@ -103,7 +107,7 @@
     <Component class="javax.swing.JLabel" name="lblCarNum">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="&#xad74;&#xb9bc;" size="24" style="0"/>
+          <Font name="NanumSquare" size="24" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#xcc28;&#xb7c9;&#xbc88;&#xd638; : "/>
       </Properties>
@@ -118,7 +122,7 @@
     <Component class="javax.swing.JButton" name="btnCreate">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="&#xad74;&#xb9bc;" size="24" style="0"/>
+          <Font name="NanumSquare" size="24" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#xb4f1;&#xb85d;"/>
       </Properties>
@@ -129,10 +133,21 @@
     <Component class="javax.swing.JLabel" name="lblCaption">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="&#xad74;&#xb9bc;" size="18" style="0"/>
+          <Font name="NanumSquare" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#xb4f1;&#xb85d; &#xcc98;&#xb9ac;&#xd558;&#xc2dc;&#xaca0;&#xc2b5;&#xb2c8;&#xae4c;?"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnCancel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="NanumSquare" size="24" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#xcde8;&#xc18c;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

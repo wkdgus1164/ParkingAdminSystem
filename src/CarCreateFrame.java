@@ -4,12 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 public class CarCreateFrame extends javax.swing.JFrame {
 
     DatabaseManager DBM = new DatabaseManager();
     String strSQL = "Select * From parkingAdminSystem";
-    
+
     public CarCreateFrame() {
         initComponents();
     }
@@ -30,16 +31,17 @@ public class CarCreateFrame extends javax.swing.JFrame {
         txtCarNum = new javax.swing.JTextField();
         btnCreate = new javax.swing.JButton();
         lblCaption = new javax.swing.JLabel();
+        btnCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblCarCreateFrameTitle.setFont(new java.awt.Font("굴림", 0, 36)); // NOI18N
+        lblCarCreateFrameTitle.setFont(new java.awt.Font("NanumSquare", 0, 36)); // NOI18N
         lblCarCreateFrameTitle.setText("차량 등록");
 
-        lblCarType.setFont(new java.awt.Font("굴림", 0, 24)); // NOI18N
+        lblCarType.setFont(new java.awt.Font("NanumSquare", 0, 24)); // NOI18N
         lblCarType.setText("차      종 : ");
 
-        lblCarNum.setFont(new java.awt.Font("굴림", 0, 24)); // NOI18N
+        lblCarNum.setFont(new java.awt.Font("NanumSquare", 0, 24)); // NOI18N
         lblCarNum.setText("차량번호 : ");
 
         txtCarType.addActionListener(new java.awt.event.ActionListener() {
@@ -48,7 +50,7 @@ public class CarCreateFrame extends javax.swing.JFrame {
             }
         });
 
-        btnCreate.setFont(new java.awt.Font("굴림", 0, 24)); // NOI18N
+        btnCreate.setFont(new java.awt.Font("NanumSquare", 0, 24)); // NOI18N
         btnCreate.setText("등록");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,8 +58,16 @@ public class CarCreateFrame extends javax.swing.JFrame {
             }
         });
 
-        lblCaption.setFont(new java.awt.Font("굴림", 0, 18)); // NOI18N
+        lblCaption.setFont(new java.awt.Font("NanumSquare", 0, 18)); // NOI18N
         lblCaption.setText("등록 처리하시겠습니까?");
+
+        btnCancel.setFont(new java.awt.Font("NanumSquare", 0, 24)); // NOI18N
+        btnCancel.setText("취소");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -67,23 +77,24 @@ public class CarCreateFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(52, 52, 52)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblCaption)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblCarType)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtCarType, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblCarNum)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCarNum, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(txtCarNum, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(lblCarCreateFrameTitle))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(66, Short.MAX_VALUE))
+                        .addGap(135, 135, 135)
+                        .addComponent(lblCarCreateFrameTitle)))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,18 +105,20 @@ public class CarCreateFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(lblCarType))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtCarType, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblCarNum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtCarNum))
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCarNum)
+                    .addComponent(txtCarNum, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
                 .addComponent(lblCaption)
                 .addGap(26, 26, 26)
-                .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnCreate, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                    .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();
@@ -116,19 +129,22 @@ public class CarCreateFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCarTypeActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-        // TODO add your handling code here:   
-        strSQL = "Insert Into parkingAdminSystem Values (";
-        strSQL += "'" + txtCarType + "', ";
-        strSQL += "'" + txtCarNum.getText() + "')";
-        //try {
-        //    DBM.open();
-        //    DBM.DB_stmt.executeQuery(strSQL);
-        //    strSQL = "Select * From parkingAdminSystem";
-        //    DBM.close(Connection, DB_stmt, DB_rs);
-        //} catch (Exception e) {
-        //    System.out.println("SQLException : " + e.getMessage());
-        //}                                     
+        String errorText = "";
+        if (txtCarType.getText().length() == 0) {
+            errorText += "[차종]";
+        }
+        if (txtCarNum.getText().length() == 0) {
+            errorText += "[차량번호]";
+        }
+        if (errorText != "") {
+            errorText += "를 확인해 주세요.";
+            JOptionPane.showMessageDialog(null, errorText, "입력값 확인", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btnCreateActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,6 +182,7 @@ public class CarCreateFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnCreate;
     private javax.swing.JLabel lblCaption;
     private javax.swing.JLabel lblCarCreateFrameTitle;
