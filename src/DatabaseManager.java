@@ -1,5 +1,3 @@
-package db;
-
 import java.io.IOException;
 import java.sql.*;
 
@@ -10,9 +8,9 @@ public class DatabaseManager {
     String id = "ADMIN";
     String pq = "alpha190315";
     
-    Connection DB_con;
-    Statement DB_stmt;
-    ResultSet DB_rs;
+    public Connection DB_con;
+    public Statement DB_stmt;
+    public ResultSet DB_rs;
 
     public void dbOpen() throws IOException {
         try {

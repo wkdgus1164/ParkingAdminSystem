@@ -1,10 +1,19 @@
-
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
 public class CarInFrame extends javax.swing.JFrame {
 
+DatabaseManager DBM = new DatabaseManager();
+    SimpleDateFormat nowTimeDPFormat = new SimpleDateFormat("yyyy년 MM월 dd일, HH:mm:ss");
+    SimpleDateFormat nowTimeDBFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm");
+
+    String nowTimeDP = nowTimeDPFormat.format(System.currentTimeMillis());
+    String nowTimeDB = nowTimeDBFormat.format(System.currentTimeMillis());
+    
     public CarInFrame() {
         initComponents();
+        //lblInTime.setText(hour + "시" + min + "분 " + sec + "초");
+        lblInTime.setText(nowTimeDP);
     }
 
     @SuppressWarnings("unchecked")
@@ -109,8 +118,19 @@ public class CarInFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
+        String strSQL = "Insert Into t_log (log_idx, car_recent_in) Values (";
+        strSQL += "'" + "logidx?" + "', ";                                              // logidx?
+        strSQL += "to_char(sysdate,'" + nowTimeDB + "'))";
+        try {
+            DBM.dbOpen();
+            DBM.DB_stmt.executeUpdate(strSQL);
+            strSQL = "Select * From t_car";
+            DBM.dbClose();
+        } catch (Exception e) {
+            System.out.println("SQLException : " + e.getMessage());
         JOptionPane.showMessageDialog(null, "정상적으로 반영되었습니다.", "입차 처리 완료", JOptionPane.INFORMATION_MESSAGE);
         this.setVisible(false);
+        }
     }//GEN-LAST:event_btnConfirmActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
