@@ -24,61 +24,53 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="lblCarType" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblCarOutTime" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                          <Component id="lblParkedTime" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblCarOutTimeText" max="32767" attributes="0"/>
+                          <Component id="lblParkedTimeText" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblCarInTime" max="32767" attributes="0"/>
-                          <Component id="lblCarNum" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="lblCarType" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <Component id="lblCarTypeText" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="lblCarOutTime" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
-                              <Component id="lblTotaTime" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblCaption" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="btnOutConfirm" min="-2" pref="181" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btnCancel" min="-2" pref="183" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lblCarNum" max="32767" attributes="0"/>
+                          <Component id="lblCarInTime" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblCarNumText" max="32767" attributes="0"/>
+                          <Component id="lblCarInTimeText" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+              <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -86,34 +78,34 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="lblCarType" max="32767" attributes="0"/>
-                  <Component id="jLabel3" pref="33" max="32767" attributes="0"/>
+                  <Component id="lblCarTypeText" max="32767" attributes="0"/>
+                  <Component id="lblCarType" pref="33" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel4" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                   <Component id="lblCarNum" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="lblCarNumText" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel2" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="lblCarInTime" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="lblCarInTime" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="lblCarInTimeText" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="lblCarOutTime" max="32767" attributes="0"/>
-                  <Component id="jLabel5" pref="35" max="32767" attributes="0"/>
+                  <Component id="lblCarOutTimeText" max="32767" attributes="0"/>
+                  <Component id="lblCarOutTime" pref="35" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jLabel6" max="32767" attributes="0"/>
-                  <Component id="lblTotaTime" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="lblParkedTime" max="32767" attributes="0"/>
+                  <Component id="lblParkedTimeText" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+              <Component id="lblCaption" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnOutConfirm" min="-2" pref="45" max="-2" attributes="0"/>
@@ -125,7 +117,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="lblTitle">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="36" style="0"/>
@@ -133,52 +125,12 @@
         <Property name="text" type="java.lang.String" value="&#xcc28;&#xb7c9; &#xcd9c;&#xcc28;&#xd558;&#xae30;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="NanumSquare" size="18" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="&#xcc28;          &#xc885; :"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="NanumSquare" size="18" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="&#xcc28;&#xb7c9;    &#xbc88;&#xd638; :"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="NanumSquare" size="18" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="&#xc785;&#xcc28;    &#xc2dc;&#xac04; :"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="NanumSquare" size="18" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="&#xcd9c;&#xcc28;    &#xc2dc;&#xac04; :"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel6">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="NanumSquare" size="18" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="&#xcd1d; &#xc8fc;&#xcc28;&#xc2dc;&#xac04; :"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="lblCarType">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="18" style="0"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="&#xcc28;&#xc885;"/>
+        <Property name="text" type="java.lang.String" value="&#xcc28;           &#xc885; :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCarNum">
@@ -186,6 +138,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="18" style="0"/>
         </Property>
+        <Property name="text" type="java.lang.String" value="&#xcc28;&#xb7c9;    &#xbc88;&#xd638; :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCarInTime">
@@ -193,6 +146,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="18" style="0"/>
         </Property>
+        <Property name="text" type="java.lang.String" value="&#xc785;&#xcc28;    &#xc2dc;&#xac04; :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCarOutTime">
@@ -200,16 +154,54 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="18" style="0"/>
         </Property>
+        <Property name="text" type="java.lang.String" value="&#xcd9c;&#xcc28;    &#xc2dc;&#xac04; :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblTotaTime">
+    <Component class="javax.swing.JLabel" name="lblParkedTime">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="NanumSquare" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#xcd1d; &#xc8fc;&#xcc28;&#xc2dc;&#xac04; :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblCarTypeText">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="NanumSquare" size="18" style="0"/>
+        </Property>
+        <Property name="toolTipText" type="java.lang.String" value="&#xcc28;&#xc885;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblCarNumText">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="18" style="0"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
+    <Component class="javax.swing.JLabel" name="lblCarInTimeText">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="NanumSquare" size="18" style="0"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblCarOutTimeText">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="NanumSquare" size="18" style="0"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblParkedTimeText">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="NanumSquare" size="18" style="0"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblCaption">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="18" style="0"/>

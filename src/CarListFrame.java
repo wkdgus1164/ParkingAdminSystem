@@ -1,3 +1,5 @@
+import db.DatabaseManager;
+import utils.ValueConverter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -5,6 +7,8 @@ public class CarListFrame extends javax.swing.JFrame {
 
     DatabaseManager DBM = new DatabaseManager();
     String strSQL = "Select * From t_car";
+    
+    ValueConverter bean = new ValueConverter();
     
     public CarListFrame() {
         initComponents();
@@ -15,7 +19,6 @@ public class CarListFrame extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println("SQLException : " + e.getMessage());
         }
-
     }
 
     public void setTable(String strQuery) {
@@ -237,8 +240,9 @@ public class CarListFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         int iCntRow = 0;
         iCntRow = tblMemberList.getSelectedRow();
-        
-        
+        //System.out.println(iCntRow);
+        int idxNum = Integer.parseInt(tblMemberList.getValueAt(iCntRow, 0).toString());
+        bean.setValue(idxNum);
     }//GEN-LAST:event_tblMemberListMouseClicked
 
     /**

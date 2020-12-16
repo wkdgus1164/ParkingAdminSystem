@@ -1,3 +1,4 @@
+import db.DatabaseManager;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -141,9 +142,8 @@ public class CarCreateFrame extends javax.swing.JFrame {
             DBM.DB_stmt.executeUpdate(strSQL);
             strSQL = "Select * From t_car";
             DBM.dbClose();
-            JOptionPane.showMessageDialog(null, "회원 등록이 완료되었습니다", "회원 등록 완료", JOptionPane.WARNING_MESSAGE);
-               // https://www.tutorialspoint.com/how-to-implement-propertychangelistener-using-lambda-expression-in-java
-               // filter 중복 확인
+            JOptionPane.showMessageDialog(null, "회원 등록이 완료되었습니다", "회원 등록 완료", JOptionPane.INFORMATION_MESSAGE);
+            dispose();
         } catch (Exception e) {
             System.out.println("SQLException : " + e.getMessage());
         }

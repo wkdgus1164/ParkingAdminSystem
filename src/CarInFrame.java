@@ -1,19 +1,41 @@
+import db.DatabaseManager;
+import utils.ValueConverter;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
+
 public class CarInFrame extends javax.swing.JFrame {
 
-DatabaseManager DBM = new DatabaseManager();
+    DatabaseManager DBM = new DatabaseManager();
+    ValueConverter converter = new ValueConverter();
+    
     SimpleDateFormat nowTimeDPFormat = new SimpleDateFormat("yyyy년 MM월 dd일, HH:mm:ss");
     SimpleDateFormat nowTimeDBFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm");
-
     String nowTimeDP = nowTimeDPFormat.format(System.currentTimeMillis());
     String nowTimeDB = nowTimeDBFormat.format(System.currentTimeMillis());
     
+    String idx = "";
+    int fetchedIdx;
+    
     public CarInFrame() {
         initComponents();
-        //lblInTime.setText(hour + "시" + min + "분 " + sec + "초");
         lblInTime.setText(nowTimeDP);
+        fetchedIdx = converter.getValue();       
+        
+        String alpha = "Select car_number From t_car where car_idx = " + fetchedIdx;
+        
+        try {
+            DBM.dbOpen();   
+            DBM.DB_rs = DBM.DB_stmt.executeQuery(alpha); 
+            while (DBM.DB_rs.next()) {
+                idx = DBM.DB_rs.getString("car_number");
+                lblInNumber.setText(idx);
+            }
+            DBM.DB_rs.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -29,7 +51,7 @@ DatabaseManager DBM = new DatabaseManager();
         btnConfirm = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
 
-        //setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblCarInFrameTitle.setFont(new java.awt.Font("나눔스퀘어", 0, 36)); // NOI18N
         lblCarInFrameTitle.setText("입차 차량 확인");
@@ -72,16 +94,13 @@ DatabaseManager DBM = new DatabaseManager();
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addComponent(lblCarInFrameTitle))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(53, 53, 53)
                                 .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblCaption)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(lblInNumberTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -89,8 +108,15 @@ DatabaseManager DBM = new DatabaseManager();
                                 .addGap(30, 30, 30)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(lblInTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lblInNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(17, Short.MAX_VALUE))
+                                    .addComponent(lblInNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(lblCaption)))
+                .addContainerGap(122, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblCarInFrameTitle)
+                .addGap(151, 151, 151))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,8 +134,8 @@ DatabaseManager DBM = new DatabaseManager();
                 .addGap(38, 38, 38)
                 .addComponent(lblCaption)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
@@ -118,18 +144,19 @@ DatabaseManager DBM = new DatabaseManager();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
-        String strSQL = "Insert Into t_log (log_idx, car_recent_in) Values (";
-        strSQL += "'" + "logidx?" + "', ";                                              // logidx?
-        strSQL += "to_char(sysdate,'" + nowTimeDB + "'))";
+        String strSQL = "Insert Into t_log (car_idx, car_recent_in) Values (";
+        strSQL += fetchedIdx + ", ";
+        strSQL += "'" + nowTimeDB + "')";
         try {
             DBM.dbOpen();
             DBM.DB_stmt.executeUpdate(strSQL);
-            strSQL = "Select * From t_car";
-            DBM.dbClose();
+            DBM.DB_rs.close();
+            JOptionPane.showMessageDialog(null, "정상적으로 반영되었습니다.", "입차 처리 완료", JOptionPane.INFORMATION_MESSAGE);
+            converter.setValue(1);
+            this.setVisible(false);
         } catch (Exception e) {
-            System.out.println("SQLException : " + e.getMessage());
-        JOptionPane.showMessageDialog(null, "정상적으로 반영되었습니다.", "입차 처리 완료", JOptionPane.INFORMATION_MESSAGE);
-        this.setVisible(false);
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "에러 발생", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnConfirmActionPerformed
 
