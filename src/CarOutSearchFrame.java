@@ -45,7 +45,7 @@ public class CarOutSearchFrame extends javax.swing.JFrame {
                 int gapHour = TC.getRestHour(OldHour);
                 int gapMinute = TC.getRestMinute(OldMinute);
                 int gapTime = gapMinute + gapHour * 60 + gapDate * 1440 + gapMonth * 43200 + gapYear * 525600;
-                int parkingFee = gapTime/10 * 1000;
+                int parkingFee = gapTime * 100;
                 
                 tblParkedCarList.setValueAt(gapTime, iCntRow, 2);
                 tblParkedCarList.setValueAt(parkingFee, iCntRow, 3);

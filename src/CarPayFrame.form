@@ -31,15 +31,15 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblFreeTime" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblParkTime" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTotalFee" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblTotalHour" max="32767" attributes="0"/>
-                          <Component id="lblFreeTime" max="32767" attributes="0"/>
-                          <Component id="lblTotalFee" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblParkTimeText" max="32767" attributes="0"/>
+                          <Component id="lblFreeTimeText" max="32767" attributes="0"/>
+                          <Component id="lblTotalFeeText" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
@@ -47,8 +47,8 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblFinalFee" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblUsePoint" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -57,7 +57,7 @@
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="lblFinalFee" max="32767" attributes="0"/>
+                                  <Component id="lblFinalFeeText" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jSeparator1" alignment="1" max="32767" attributes="0"/>
@@ -68,27 +68,29 @@
                       <Component id="jSeparator2" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="lblAvailablePoint" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jComboBox1" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnPay" min="-2" pref="191" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnCancel" pref="192" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                      <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblAvailablePoint" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="lblAvailablePointText" min="-2" pref="208" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -99,39 +101,40 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblTotalHour" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblParkTime" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblParkTimeText" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblFreeTime" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblFreeTimeText" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblTotalFee" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblTotalFeeText" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblAvailablePoint" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAvailablePointText" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblUsePoint" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtUsePoint" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                   <Component id="lblFinalFee" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblFinalFeeText" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
@@ -151,7 +154,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="lblTitle">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="36" style="0"/>
@@ -159,7 +162,7 @@
         <Property name="text" type="java.lang.String" value="&#xcd9c;&#xcc28;&#xc694;&#xae08; &#xacb0;&#xc81c;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="lblParkTime">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="18" style="0"/>
@@ -167,7 +170,7 @@
         <Property name="text" type="java.lang.String" value="&#xcd1d; &#xc8fc;&#xcc28; &#xc2dc;&#xac04; :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="lblFreeTime">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="18" style="0"/>
@@ -175,7 +178,7 @@
         <Property name="text" type="java.lang.String" value="&#xbb34;&#xb8cc; &#xc8fc;&#xcc28; &#xc2dc;&#xac04; :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="lblTotalFee">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="18" style="0"/>
@@ -183,7 +186,7 @@
         <Property name="text" type="java.lang.String" value="&#xcd1d; &#xbd80;&#xacfc; &#xc694;&#xae08; :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
+    <Component class="javax.swing.JLabel" name="lblAvailablePoint">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="18" style="0"/>
@@ -191,7 +194,7 @@
         <Property name="text" type="java.lang.String" value="&#xc0ac;&#xc6a9; &#xac00;&#xb2a5; &#xd3ec;&#xc778;&#xd2b8; :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblTotalHour">
+    <Component class="javax.swing.JLabel" name="lblParkTimeText">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="18" style="0"/>
@@ -199,7 +202,7 @@
         <Property name="text" type="java.lang.String" value="  "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblFreeTime">
+    <Component class="javax.swing.JLabel" name="lblFreeTimeText">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="18" style="0"/>
@@ -207,7 +210,7 @@
         <Property name="text" type="java.lang.String" value="  "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblTotalFee">
+    <Component class="javax.swing.JLabel" name="lblTotalFeeText">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="18" style="0"/>
@@ -215,7 +218,7 @@
         <Property name="text" type="java.lang.String" value="  "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblAvailablePoint">
+    <Component class="javax.swing.JLabel" name="lblAvailablePointText">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="18" style="0"/>
@@ -223,7 +226,7 @@
         <Property name="text" type="java.lang.String" value="  "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel6">
+    <Component class="javax.swing.JLabel" name="lblUsePoint">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="18" style="0"/>
@@ -238,7 +241,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
+    <Component class="javax.swing.JLabel" name="lblFinalFee">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="18" style="0"/>
@@ -246,7 +249,7 @@
         <Property name="text" type="java.lang.String" value="&#xcd1d; &#xacb0;&#xc81c; &#xae08;&#xc561; :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblFinalFee">
+    <Component class="javax.swing.JLabel" name="lblFinalFeeText">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="NanumSquare" size="18" style="0"/>
@@ -311,6 +314,17 @@
           <Font name="NanumSquare" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#xcde8;&#xc18c;&#xd558;&#xae30;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel10">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="NanumSquare" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="P"/>
       </Properties>
     </Component>
   </SubComponents>
